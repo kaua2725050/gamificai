@@ -2,6 +2,7 @@
     font-family: 'Montserrat';
     src: url(Montserrat-VariableFont_wght.ttf);
 }
+
 /* reset de CSS - limpa configuraçoes padrao que atrapalham */
 * {
     margin: 0;
@@ -15,11 +16,10 @@ html {
 
 :root {
     --roxo-gamifica: #47208b;
-    --laranja-gamifica:#f06638
-
+    --laranja-gamifica: #f06638;
 }
 
-.container-grid{
+.container-grid {
     width: 80vw;
     max-width: 1400px;
 
@@ -36,17 +36,17 @@ html {
     background-image: linear-gradient(90deg, rgba(54, 24, 104, 1) 0%, rgba(54, 24, 104, 0.8) 100%), url(img/bg-room.png);
     background-repeat: no-repeat;
 
-    background-position:165% 40%;
+    background-position: 165% 40%;
 }
 
-header{
+header {
     height: 165px;
 
 
 }
 
 header div.container-grid {
-height: 100%;
+    height: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -55,6 +55,10 @@ height: 100%;
 
 header img {
     width: 290px;
+}
+
+header button {
+    display: none;
 }
 
 .menu {
@@ -73,7 +77,7 @@ header img {
     text-decoration: underline transparent;
     text-decoration-thickness: 2px;
 
-transition: text-decoration 508ms ease;
+    transition: text-decoration 508ms ease;
 }
 
 .menu a:hover {
@@ -87,13 +91,48 @@ transition: text-decoration 508ms ease;
 }
 
 .conteudo-banner p {
-    color:white;
+    color: white;
 
     font-family: 'Anta';
     font-size: 32px;
 }
+.conteudo-banner span {
+    display: block;
 
-.sobre { 
+    overflow: hidden;
+
+    border-right: 6px solid var(--laranja-gamifica);
+    white-space: nowrap;
+
+    animation: 
+    digitando 2s steps(40, end ),
+    cursor 0.75s step-end infinite 
+
+    ;
+}
+
+@keyframes digitando{
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    from,
+    to{
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--laranja-gamifica);
+    }
+}
+
+.sobre {
     height: 800px;
     display: flex;
     justify-content: space-between;
@@ -127,7 +166,7 @@ h2 {
 
 #cases {
     text-align: center;
-    
+
     padding-bottom: 100px;
     margin-bottom: 100px;
 }
@@ -186,13 +225,13 @@ h2 {
 
     background-color: var(--laranja-gamifica);
 
-    border:none;
+    border: none;
     border-radius: 4px;
 
     color: #fff;
 
     font-family: 'Montserrant';
-    font-size:17px;
+    font-size: 17px;
     font-weight: 600;
 
     cursor: pointer;
@@ -219,7 +258,7 @@ h2 {
 
     position: relative;
 }
-    
+
 .filtro {
     height: 100%;
     width: 100%;
@@ -240,7 +279,7 @@ h2 {
 
 #portifolio a {
     width: fit-content;
-    
+
     font-family: "anta";
     font-size: 28px;
 
@@ -260,114 +299,390 @@ h2 {
     margin-bottom: 100px;
 }
 
-#contato h2{
+#contato h2 {
     margin-bottom: 70px;
 }
 
-    #contato form {
-        width: 50%;
+#contato form {
+    width: 50%;
 
-        margin: 0 auto;
-        padding: 60px 0;
+    margin: 0 auto;
+    padding: 60px 0;
 
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 80px;
+
+    background-color: var(--roxo-gamifica);
+
+    color: #fff;
+    font-family: 'Montserrant';
+}
+
+.contato form label {
+    margin-bottom: 15px;
+    font-size: 17px;
+
+}
+
+.campo {
+    width: 60%;
+
+    margin-bottom: 50px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campo input {
+    height: 40px;
+    color: #fff;
+    background-color: #351864;
+
+    border: none;
+    border-radius: 4px;
+
+    outline: none;
+
+    text-indent: 10px;
+
+    font-family: 'Montserrant';
+    font-size: 17px;
+}
+
+.campo-textarea {
+    width: 60%;
+
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campo-textarea textarea {
+    color: #fff;
+    background-color: #351868;
+
+    border: none;
+    border-radius: 4px;
+
+    padding: 10px;
+
+    font-family: 'Montserrant';
+    font-size: 17px;
+
+    outline: none;
+
+    resize: none;
+}
+
+.campo input:focus,
+.campo-textarea textarea:focus {
+    outline: 2px solid var(--laranja-gamifica);
+}
+
+#contato form button {
+    height: 40px;
+    width: 60%;
+
+    font-family: 'Montserrant';
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #fff;
+    background-color: var(--laranja-gamifica);
+
+    border: none;
+    border-radius: 4px;
+
+    text-transform: uppercase;
+
+    transition: background-color;
+}
+
+#contato form button:hover {
+    background-color: #ad4929;
+}
+
+#contato form input::placeholder,
+#contato form textarea::placeholder {
+    color: #b9b9b9;
+}
+
+footer {
+    height: 290px;
+    background-color: var(--roxo-gamifica);
+}
+
+footer .container-grid {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociais {
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+.redes-sociais p {
+    color: white;
+
+    font-family: "Anta";
+    font-size: 24px;
+}
+
+.icones-redes {
+    width: 240px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.icones-redes a {
+    color: white;
+}
+
+.icones-redes a:hover {
+    color: var(--laranja-gamifica);
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        position: relative;
+    }
+
+    header button {
+        width: 50px;
+
+        display: unset;
+
+        background: none;
+        border: none;
+
+    }
+
+    header svg {
+        fill: white;
+    }
+
+    nav.menu {
+        height: 500px;
+        width: 350px;
+
+        padding: 0px 30px;
+
+        justify-content: space-around;
         align-items: center;
+        flex-direction: column;
 
-        border-radius: 80px;
+        background-color: #000000f0;
 
+        position: absolute;
+        top: 165px;
+        right: 0px;
+    }
+
+    #sobre {
+        padding: 100px 15%;
+    }
+
+    .card {
+        height: 320px;
+        width: 200px;
+    }
+
+    #contato form {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .container-cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        height: 400px;
+
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 40%;
+    }
+
+    footer {
+        height: fit-content;
+    }
+
+    footer .container-grid {
+        padding: 80px;
+
+        flex-direction: column;
+    }
+
+    footer img {
+        margin-bottom: 100px;
+    }
+
+    footer p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .redes-sociais {
+        align-items: center;
+    }
+}
+@media screen and (max-width:800px) {
+    .card {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #sobre {
+        height: unset;
+        margin-bottom: 40px;
+    }
+
+
+#sobre h2 {
+    margin-bottom: 50px;
+}
+
+#sobre p {
+    margin-bottom: 30px;
+}
+
+#cases {
+    margin-bottom: unset;
+}
+
+
+#portifolio a {
+    width: 100%;
+    text-align: center;
+}
+
+.campo-textarea, #contato form button {
+    width: 75%;
+}
+}
+
+@media screen and (max-width: 500px) {
+    .container-grid {
+        width: 90%;
+    }
+
+    header img {
+        width: 200px;
+    }
+
+    .banner {
+        background-size: cover;
+    }
+
+    .conteudo-banner p {
+        font-size: 22px;
+    }
+
+    nav.menu {
+        width: 100%;
+
+        display: none;
+    }
+
+    #sobre {
+    padding-left: 0;
+    padding-right: 0;
+    }
+
+    #sobre p {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #cases.container-grid {
+        width: 100%;
+        margin: unset;
+    }
+
+    .container-cards {
+        flex-wrap: nowrap;
+
+        gap: 40px;
+
+        overflow-x: auto;
+    }
+
+
+
+    .card {
+        height: 350px;
+        width: 280px;
+
+        flex-basis: unset;
+    }
+
+    .card:first-child {
+        margin-left: 30px;
+    }
+
+    .card:last-child {
+        margin-right: 20px;
+    }
+
+    #portfolio {
+        margin-bottom: 0;
+    }
+
+    #contato {
+        padding-top: 150px;
         background-color: var(--roxo-gamifica);
-
-        color: #fff; 
-        font-family: 'Montserrant';
+        color: white;
     }
 
-    .contato form label {
-        margin-bottom: 15px;
-        font-size: 17px;
-
+    #contato h2 {
+        margin-bottom: 0;
     }
 
-    .campo{
-        width: 60%;
+    #contato form{
+        width: 100%;
+        border-radius: 0;
+    }
+}
 
-        margin-bottom: 50px;
-
-        text-align: left;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+@media screen and (max-width: 400px) {
+    header img {
+        width: 160px;
     }
 
-    .campo input {
-        height: 40px;
-        color:#fff;
-        background-color: #351864;
-
-        border: none;
-        border-radius: 4px;
-
-        outline: none;
-
-        text-indent: 10px;
-
-        font-family: 'Montserrant';
-        font-size: 17px;
+    header svg {
+        width: 40px;
     }
 
-    .campo-textarea {
-        width: 60%;
-
-        margin-bottom: 30px;
-
-        text-align: left;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .conteudo-banner p {
+        font-size: 20px;
     }
 
-    .campo-textarea textarea {
-        color: #fff;
-        background-color: #351868;
-
-        border: none;
-        border-radius: 4px;
-
-        padding: 10px;
-
-        font-family: 'Montserrant';
-        font-size: 17px;
-
-        outline: none;
-
-        resize: none;
+    footer img {
+        width: 200px;
     }
-
-    .campo input:focus, .campo-textarea textarea:focus {
-        outline: 2px solid var(--laranja-gamifica);
-    }
-
-    #contato form button {
-        height: 40px;
-        width: 60%;
-
-        font-family:'Montserrant';
-        font-size: 17px;
-        font-weight: 600;
-
-        color: #fff;
-        background-color: var(--laranja-gamifica);
-
-        border: none;
-        border-radius: 4px;
-
-        text-transform: uppercase;
-
-        transition: background-color;
-    }
-
-    #contato form button:hover {
-        background-color: #ad4929;
-    }
+}
