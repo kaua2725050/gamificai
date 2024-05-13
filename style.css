@@ -175,7 +175,7 @@ h2 {
     margin-bottom: 70px;
 }
 
-.container-cards {
+.container-grid {
     width: 100%;
 
     display: flex;
@@ -461,6 +461,13 @@ footer .container-grid {
 .icones-redes a:hover {
     color: var(--laranja-gamifica);
 }
+.menu-fechado {
+    display: none;
+}
+
+#icone-barras {
+    display: none;
+}
 
 @media screen and (max-width: 1300px) {
     header {
@@ -604,8 +611,6 @@ footer .container-grid {
 
     nav.menu {
         width: 100%;
-
-        display: none;
     }
 
     #sobre {
