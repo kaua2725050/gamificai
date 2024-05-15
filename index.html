@@ -15,7 +15,7 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
+<body onload="renderizarCases()">
     <div class=" banner">
         <header>
             <div class="container-grid">
@@ -39,9 +39,9 @@
             <button onclick="mostrarProximoSlide()" id="botao-posterior"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></button>
 
             <div class="botoes">
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
+                <button onclick="selecionarSlide(0)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
+                <button onclick="selecionarSlide(1)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
+                <button onclick="selecionarSlide(2)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></button>
             </div>
         </div>
     </div>
@@ -59,31 +59,6 @@
 
     <section class="container-grid" id="cases">
         <h2>cases de sucesso</h2>
-
-        <div class="container-cards">
-
-            <div class="card">
-                <img src="https://unsplash.it/600/400" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola de 80%</p>
-                <button>ver mais</button>
-            </div>
-
-            <div class="card">
-                <img src="https://unsplash.it/600/400" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola de 80%</p>
-                <button>ver mais</button>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/600/400" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola de 80%</p>
-                <button>ver mais</button>
-            </div>
-
-            <div class="card">
-                <img src="https://unsplash.it/600/400" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola de 80%</p>
-                <button>ver mais</button>
-            </div>
 
         </div>
     </section>
